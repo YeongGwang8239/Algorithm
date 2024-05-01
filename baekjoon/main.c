@@ -16,8 +16,5 @@ int main() {
     }
     free(sublist);
     
-    
-
-
     return 0;
 }
