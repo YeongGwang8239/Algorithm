@@ -1,18 +1,23 @@
 #include <stdio.h>
+#include <stdlib.h>
 
-int main() {
-    int time_int;
-    double time_float, a, b, v;
-    scanf("%lf %lf %lf", &a, &b, &v);
-    time_float = (v-a)/(a-b);
-    time_int = (v-a)/(a-b);
-    if (time_float==time_int) {
-        printf("%d", time_int+1);
+int main() {    
+    int n, i, k;
+    scanf("%d", &n);
+    int *sublist = (int*)malloc(4*n);
+    for (i=0; i<n; i++) {
+        scanf("%d", sublist[i]);
     }
-    else {
-        time_float += 2;
-        time_int = (int)time_float;
-        printf("%d", time_int);
+    
+    k = sublist[n-1];
+    int *list = (int*)malloc(4*k);
+    for (i=0; i<k; i++) {
+        list[sublist[i]] = sublist[i];
     }
+    free(sublist);
+    
+    
+
+
     return 0;
 }
